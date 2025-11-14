@@ -1,6 +1,6 @@
 #ifndef CRYPT_H
 #define CRYPT_H
 
-void encrypt();
+void cryptify(char file[]);
 int seed(char password[]);
 #endif
