@@ -1,7 +1,8 @@
 #include <stdio.h>
-#include "crypt.h"
+void cryptify(char file[]);
+int seed(char password[]);
 
-int main(){
+int main() {
     char file[256];
     printf("Enter file path: "); //Search for file add fn
     scanf(" %s", file);

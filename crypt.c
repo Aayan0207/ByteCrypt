@@ -9,19 +9,18 @@ int seed(char password[]) {
 }
 
 void cryptify(char file[256]) {
-    char password[32];
-    printf("Enter password: ");
-    scanf("%s", password);
-    int key = seed(password);
-    size_t bytes_read;
     FILE* file_pointer = fopen(file, "rb+");
     if (file_pointer == NULL) { //Remove after searching thing
         printf("Invalid File Path.");
         return;
     }
+    char password[32];
+    printf("Enter password: ");
+    scanf("%s", password);
+    int key = seed(password);
     while (1) {
         char chunk[4096];
-        bytes_read = fread(&chunk, 1, sizeof(chunk), file_pointer);
+        size_t bytes_read = fread(&chunk, 1, sizeof(chunk), file_pointer);
         if (bytes_read == 0) {
             break;
         }
