@@ -1,13 +1,15 @@
 #include <stdio.h>
+#include <string.h>
 void cryptify(char file[]);
 int seed(char password[]);
 
-int main() {
+int main(int argc, char* argv[]) {
+    if (argc != 2) {
+        printf("Usage: program.exe <file_path>");
+        return 0;
+    }
     char file[256];
-    printf("Enter file path: "); //Search for file add fn
-    scanf(" %s", file);
+    strcpy(file, argv[1]);
     cryptify(file);
-    // int key = seed("Hello");
-    // printf("%d", key);
     return 0;
 }
