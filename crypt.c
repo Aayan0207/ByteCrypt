@@ -8,15 +8,12 @@ int seed(char password[]) {
     return key % 256;
 }
 
-void cryptify(char file[256]) {
+void cryptify(char file[256], char password[32]) {
     FILE* file_pointer = fopen(file, "rb+");
     if (file_pointer == NULL) { //Remove after searching thing
         printf("Invalid File Path.");
         return;
     }
-    char password[32];
-    printf("Enter password: ");
-    scanf("%s", password);
     int key = seed(password);
     while (1) {
         char chunk[4096];
