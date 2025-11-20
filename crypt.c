@@ -1,5 +1,4 @@
 #include <stdio.h>
-// #include <Windows.h>
 int seed(char password[]) {
     unsigned long key = 5381, multiplier = 33;
     for (int i = 0; password[i] != '\0';i++) {
@@ -9,7 +8,6 @@ int seed(char password[]) {
 }
 
 void cryptify(char file[256], char password[32]) {
-    // SetConsoleOutputCP(CP_UTF8);
     FILE* file_pointer = fopen(file, "rb+");
     if (file_pointer == NULL) {
         printf("\x1B[31mInvalid File Path. ❌\x1B[0m");
