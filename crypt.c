@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <Windows.h>
+
 int seed(char password[]) {
     unsigned long key = 5381, multiplier = 33;
     for (int i = 0; password[i] != '\0';i++) {
