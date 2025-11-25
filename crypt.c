@@ -9,7 +9,7 @@ int seed(char password[]) {
     return key % 256;
 }
 
-void cryptify(char file[256], char password[32]) {
+void cryptify(char file[], char password[]) {
     SetConsoleOutputCP(CP_UTF8);
     FILE* file_pointer = fopen(file, "rb+");
     if (file_pointer == NULL) {
