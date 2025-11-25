@@ -1,9 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+
 void cryptify(char file[], char password[]);
 int seed(char password[]);
 
 int main(int argc, char* argv[]) {
+    system("cls");
     printf("    ____        __       ______                 __ \n   / __ )__  __/ /____  / ____/______  ______  / /_\n  / __  / / / / __/ _ \\/ /   / ___/ / / / __ \\/ __/\n / /_/ / /_/ / /_/  __/ /___/ /  / /_/ / /_/ / /_  \n/_____/\\__, /\\__/\\___/\\____/_/   \\__, / .___/\\__/  \n      /____/                    /____/_/           \n");
     if (argc != 3) {
         printf("\x1B[31mUsage: <file_path> <password>\x1B[0m");
